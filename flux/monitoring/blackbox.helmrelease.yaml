@@ -14,3 +14,13 @@ spec:
         namespace: flux-system
       version: 8.16.0
   interval: 5m
+
+  values:
+    serviceMonitor:
+      enabled: true
+      defaults:
+        labels:
+          release: prometheus
+      targets:
+        - name: opensense.home
+          url: https://opnsense.home/

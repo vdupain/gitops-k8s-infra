@@ -16,6 +16,10 @@ spec:
   interval: 5m
 
   values:
+    prometheus:
+      additionalScrapeConfigs:
+        name: additional-scrape-configs
+        key: prometheus-additional.yaml    
     alertmanager:
       enabled: false
   

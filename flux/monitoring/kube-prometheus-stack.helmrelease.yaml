@@ -17,9 +17,10 @@ spec:
 
   values:
     prometheus:
-      additionalScrapeConfigs:
-        name: additional-scrape-configs
-        key: prometheus-additional.yaml    
+      prometheusSpec:
+        additionalScrapeConfigsSecret:
+          name: additional-scrape-configs
+          key: prometheus-additional.yaml
     alertmanager:
       enabled: false
   

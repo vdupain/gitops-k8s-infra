@@ -17,5 +17,5 @@ spec:
 
   values:
     alertmanager:
-      enabled: true
+      enabled: false
   

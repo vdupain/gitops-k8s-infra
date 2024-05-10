@@ -18,4 +18,9 @@ spec:
   values:
     alertmanager:
       enabled: false
+    grafana:
+      service:
+        enabled: true
+        type: LoadBalancer        
+      
   

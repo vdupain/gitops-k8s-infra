@@ -1,0 +1,19 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: openwrt
+  namespace: monitoring
+  labels:
+    app: openwrt
+    release: prometheus
+spec:
+  endpoints:
+    - port: metrics
+      interval: 30s
+      path: /metrics
+  selector:
+    matchLabels:
+      app: openwrt
+  namespaceSelector:
+    matchNames:
+      - monitoring

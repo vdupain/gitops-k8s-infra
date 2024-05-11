@@ -1,0 +1,27 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: openwrt
+  namespace: monitoring
+  labels:
+    app: openwrt
+spec:    
+  ports:
+    - name: metrics
+      port: 9100
+      protocol: TCP
+      targetPort: 9100
+---
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: openwrt
+  namespace: monitoring
+subsets:
+  - addresses:
+    - ip: 192.168.10.254
+    ports:
+      - name: metrics
+        port: 9100
+        protocol: TCP

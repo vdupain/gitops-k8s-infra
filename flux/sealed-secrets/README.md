@@ -13,6 +13,6 @@ kubeseal --fetch-cert \
 
 ```sh
   echo -n my-secret | kubectl create secret \
-  generic mysecret --dry-run=client --from-file=foo=/dev/stdin -o json \
-  | kubeseal --cert pub-cert.pem
+  generic mysecret --dry-run=client --from-file=foo=/dev/stdin -o yaml \
+  | kubeseal --cert pub-cert.pem -o yaml
 ```

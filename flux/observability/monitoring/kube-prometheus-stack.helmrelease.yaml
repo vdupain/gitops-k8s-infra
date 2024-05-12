@@ -4,6 +4,8 @@ kind: HelmRelease
 metadata:
   name: prometheus
   namespace: monitoring
+  annotations:
+    kustomize.toolkit.fluxcd.io/reconcile: disabled
 spec:
   chart:
     spec:
@@ -18,9 +20,16 @@ spec:
   values:
     alertmanager:
       enabled: false
-    grafana:
-      service:
+    prometheus:
+      ingress:
         enabled: true
-        type: LoadBalancer        
-      
+        hosts:
+          - prometheus.home
+        path: "/"
+    grafana:
+      ingress:
+        enabled: true
+        hosts:
+          - grafana.home
+        path: "/"
   

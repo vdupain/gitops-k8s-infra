@@ -27,9 +27,10 @@ spec:
           - prometheus.home
         path: "/"
     grafana:
-      ingress:
+      # normalement ingress
+      # mais ici juste pour tester avec un service LB et DNSEndpoint
+      service:
         enabled: true
-        hosts:
-          - grafana.home
-        path: "/"
+        type: LoadBalancer
+
   

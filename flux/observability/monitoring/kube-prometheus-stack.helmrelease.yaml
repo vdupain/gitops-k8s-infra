@@ -20,17 +20,5 @@ spec:
   values:
     alertmanager:
       enabled: false
-    prometheus:
-      ingress:
-        enabled: true
-        hosts:
-          - prometheus.home
-        path: "/"
-    grafana:
-      # normalement ingress
-      # mais ici juste pour tester avec un service LB et DNSEndpoint
-      service:
-        enabled: true
-        type: LoadBalancer
 
   

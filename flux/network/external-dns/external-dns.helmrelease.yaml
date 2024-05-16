@@ -26,31 +26,14 @@ spec:
       - service
       - ingress
     logLevel: debug
-    # Pihole only supports A/AAAA/CNAME records so there is no mechanism to track ownership.
-    # You don't need to set this flag, but if you leave it unset, you will receive warning
-    # logs when ExternalDNS attempts to create TXT records.
-    registry: noop      
-    # IMPORTANT: If you have records that you manage manually in Pi-hole, set
-    # the policy to upsert-only so they do not get deleted.    
-    #policy: upsert-only
     policy: sync
 
-    provider: pihole
-    pihole:
-      server: http://192.168.10.4/
-      secretName: pihole
-      tlsSkipVerify: true
-# ---
-# apiVersion: externaldns.k8s.io/v1alpha1
-# kind: DNSEndpoint
-# metadata:
-#   name: podinfo.home
-#   namespace: external-dns
-# spec:
-#   endpoints:
-#   - dnsName: podinfo.home
-#     recordTTL: 180
-#     recordType: A
-#     targets:
-#     - 192.168.10.160
-# ---
+    registry: "txt"
+    txtPrefix: "external-dns-"
+    txtOwnerId: "k8s"
+    domainFilters:
+      - "example.org"
+    provider: coredns
+    coredns:
+      etcdEndpoints: "http://etcd.etcd.svc.cluster.local:2379"
+

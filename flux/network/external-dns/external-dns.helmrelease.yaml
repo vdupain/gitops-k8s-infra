@@ -28,11 +28,11 @@ spec:
     logLevel: debug
     policy: sync
 
-    #registry: "txt"
-    #txtPrefix: "external-dns-"
-    #txtOwnerId: "k8s"
-    #domainFilters: 
-    #  - "apps.test.example.poc"
+    registry: "txt"
+    txtPrefix: "external-dns-"
+    txtOwnerId: "k8s"
+    domainFilters:
+      - "example.org"
     provider: coredns
     coredns:
       etcdEndpoints: "http://etcd.etcd.svc.cluster.local:2379"

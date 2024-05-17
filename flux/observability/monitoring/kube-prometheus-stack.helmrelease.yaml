@@ -4,8 +4,8 @@ kind: HelmRelease
 metadata:
   name: prometheus
   namespace: monitoring
-  # annotations:
-  #   kustomize.toolkit.fluxcd.io/reconcile: disabled
+  annotations:
+    kustomize.toolkit.fluxcd.io/reconcile: disabled
 spec:
   chart:
     spec:
@@ -20,5 +20,20 @@ spec:
   values:
     alertmanager:
       enabled: false
+    prometheus:
+      ingress:
+        enabled: true
+        hosts:
+          - prometheus.k8s.example.org
+        path: /
+    grafana:
+      enabled: true
+      ingress:
+        enabled: true
+        hosts:
+          - grafana.k8s.example.org
+        path: /
+
+
 
   

@@ -15,7 +15,8 @@ spec:
         name: prometheus-community
         namespace: flux-system
       version: 58.4.0
-  interval: 5m
+  interval: 15m
+  timeout: 5m
 
   values:
     alertmanager:

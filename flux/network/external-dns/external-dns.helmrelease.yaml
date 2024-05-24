@@ -32,7 +32,7 @@ spec:
     txtPrefix: "external-dns-"
     txtOwnerId: "k8s"
     domainFilters:
-      - "oodev.io"
+      - "example.org"
     provider: coredns
     coredns:
       etcdEndpoints: "http://etcd.etcd.svc.cluster.local:2379"

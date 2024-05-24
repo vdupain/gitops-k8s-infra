@@ -24,14 +24,14 @@ spec:
       ingress:
         enabled: true
         hosts:
-          - prometheus.k8s.oodev.io
+          - prometheus.k8s.example.org
         path: /
     grafana:
       enabled: true
       ingress:
         enabled: true
         hosts:
-          - grafana.k8s.oodev.io
+          - grafana.k8s.example.org
         path: /
 
 

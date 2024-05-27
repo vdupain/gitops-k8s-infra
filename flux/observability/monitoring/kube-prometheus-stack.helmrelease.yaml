@@ -24,13 +24,14 @@ spec:
       ingress:
         enabled: true
         hosts:
-          - prometheus.home
+          - prometheus.k8s.example.org
         path: "/"
     grafana:
-      # normalement ingress
-      # mais ici juste pour tester avec un service LB et DNSEndpoint
-      service:
+      enabled: true
+      ingress:
         enabled: true
-        type: LoadBalancer
+        hosts:
+          - grafana.k8s.example.org
+        path: /
 
   

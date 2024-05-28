@@ -22,7 +22,7 @@ spec:
     controller:
       publishService:
         enabled: true
-      kind: DaemonSet
+      kind: Deployment
       service:
         enabled: true
         type: LoadBalancer

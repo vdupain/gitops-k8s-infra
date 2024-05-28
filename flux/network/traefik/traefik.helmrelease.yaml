@@ -18,8 +18,7 @@ spec:
 
   values:
     deployment:
-      kind: Deployment
-      replicas: 2
+      kind: DaemonSet
     providers:
       kubernetesIngress:
         publishedService:

@@ -22,12 +22,16 @@ spec:
     prometheus:
       ingress:
         enabled: true
+        annotations:
+          kubernetes.io/ingress.class: nginx
         hosts:
           - prometheus.k8s.example.org
         path: /
     grafana:
       enabled: true
       ingress:
+        annotations:
+          kubernetes.io/ingress.class: nginx
         enabled: true
         hosts:
           - grafana.k8s.example.org

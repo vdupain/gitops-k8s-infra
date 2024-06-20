@@ -17,7 +17,7 @@ spec:
   releaseName: etcd
 
   values:
-    logLevel: "debug"
+    logLevel: "info"
     auth:
       rbac:
         create: false

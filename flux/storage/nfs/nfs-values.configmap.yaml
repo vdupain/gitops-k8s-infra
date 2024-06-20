@@ -6,7 +6,7 @@ metadata:
 data:
   values.yaml: |-
     nfs:
-      server: diskstation.home
-      path: /volume1/K8s
+      server: truenas
+      path: /mnt/pool1/k8s
       mountOptions:
         - nfsvers=4

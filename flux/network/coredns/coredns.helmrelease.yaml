@@ -47,7 +47,7 @@ spec:
       - name: forward
         parameters: . /etc/resolv.conf
       - name: etcd
-        parameters: example.org
+        parameters: k8s
         configBlock: |-
           stubzones
           path /skydns

@@ -38,5 +38,5 @@ spec:
         scrapeTimeout: 30s
         module: http_2xx          
       targets:
-        - name: opensense.home
-          url: https://opnsense.home/
+        - name: google
+          url: https://www.google.com/

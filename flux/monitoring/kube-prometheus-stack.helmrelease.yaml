@@ -4,8 +4,6 @@ kind: HelmRelease
 metadata:
   name: prometheus
   namespace: monitoring
-  # annotations:
-  #   kustomize.toolkit.fluxcd.io/reconcile: disabled
 spec:
   chart:
     spec:
@@ -15,7 +13,8 @@ spec:
         name: prometheus-community
         namespace: flux-system
       version: 58.4.0
-  interval: 5m
+  interval: 15m
+  timeout: 5m
 
   values:
     alertmanager:
@@ -23,15 +22,17 @@ spec:
     prometheus:
       ingress:
         enabled: true
+        annotations:
+          kubernetes.io/ingress.class: nginx
         hosts:
           - prometheus.k8s
-        path: "/"
+        path: /
     grafana:
       enabled: true
       ingress:
+        annotations:
+          kubernetes.io/ingress.class: nginx
         enabled: true
         hosts:
           - grafana.k8s
         path: /
-
-  

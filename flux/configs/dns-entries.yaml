@@ -1,0 +1,26 @@
+---
+apiVersion: externaldns.k8s.io/v1alpha1
+kind: DNSEndpoint
+metadata:
+  name: rabbit
+  namespace: external-dns
+spec:
+  endpoints:
+  - dnsName: rabbit.k8s
+    recordTTL: 180
+    recordType: A
+    targets:
+    - 10.107.3.101
+---
+apiVersion: externaldns.k8s.io/v1alpha1
+kind: DNSEndpoint
+metadata:
+  name: rabbit2
+  namespace: external-dns
+spec:
+  endpoints:
+  - dnsName: rabbit.oodev.io
+    recordTTL: 180
+    recordType: A
+    targets:
+    - 10.107.3.101

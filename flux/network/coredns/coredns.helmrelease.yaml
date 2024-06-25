@@ -18,7 +18,7 @@ spec:
 
   values:
     rbac:
-      create: true      
+      create: true
     # CoreDNS as an external dns service
     isClusterService: false
     serviceType: "LoadBalancer"
@@ -37,13 +37,6 @@ spec:
         configBlock: |-
           lameduck 5s
       - name: ready
-      # Required to query kubernetes API for data
-      # - name: kubernetes
-      #   parameters: cluster.local in-addr.arpa ip6.arpa
-      #   configBlock: |-
-      #     pods insecure
-      #     fallthrough in-addr.arpa ip6.arpa
-      #     ttl 30
       - name: prometheus
         parameters: 0.0.0.0:9153
       - name: forward

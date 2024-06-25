@@ -1,4 +1,3 @@
----
 apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
@@ -23,18 +22,18 @@ spec:
       ingress:
         enabled: true
         annotations:
-          external-dns.alpha.kubernetes.io/hostname: prometheus.k8s
+          external-dns.alpha.kubernetes.io/hostname: prometheus.k8s.oodev.io
           kubernetes.io/ingress.class: nginx
         hosts:
-          - prometheus.k8s
+        - prometheus.k8s
         path: /
     grafana:
       enabled: true
       ingress:
         annotations:
-          external-dns.alpha.kubernetes.io/hostname: grafana.k8s
+          external-dns.alpha.kubernetes.io/hostname: grafana.k8s.oodev.io
           kubernetes.io/ingress.class: nginx
         enabled: true
         hosts:
-          - grafana.k8s
+        - grafana.k8s
         path: /

@@ -40,7 +40,8 @@ spec:
       - name: prometheus
         parameters: 0.0.0.0:9153
       - name: forward
-        parameters: . /etc/resolv.conf
+        #parameters: . /etc/resolv.conf
+        parameters: . 10.50.1.1 10.50.1.2 10.50.1.3 192.168.4.4
       - name: etcd
         parameters: k8s.oodev.io
         configBlock: |-

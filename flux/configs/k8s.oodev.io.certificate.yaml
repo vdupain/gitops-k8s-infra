@@ -1,0 +1,11 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: k8s-oodev-io
+spec:
+  dnsNames:
+  - "*.k8s.oodev.io"
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  secretName: k8s-oodev-io

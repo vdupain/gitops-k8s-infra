@@ -15,6 +15,7 @@ spec:
   interval: 15m
   timeout: 5m
   releaseName: fluent
+  
   valuesFrom:
   - kind: ConfigMap
     name: fluent-values

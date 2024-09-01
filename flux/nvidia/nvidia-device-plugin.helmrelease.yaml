@@ -13,7 +13,8 @@ spec:
         name: nvdp
         namespace: flux-system
       version: 0.16.2
-  interval: 10m0s
+  interval: 15m
+  timeout: 5m
 
   values:
     gfd:

@@ -14,17 +14,6 @@ data:
     - macro: app_traefik
       condition: container and container.image startswith "traefik"
 
-    # Restricting listening ports to selected set
-
-    - list: traefik_allowed_inbound_ports_tcp
-      items: [443, 80, 8080]
-
-    - rule: Unexpected inbound tcp connection traefik
-      desc: Detect inbound traffic to traefik using tcp on a port outside of expected set
-      condition: inbound and evt.rawres >= 0 and not fd.sport in (traefik_allowed_inbound_ports_tcp) and app_traefik
-      output: Inbound network connection to traefik on unexpected port (command=%proc.cmdline pid=%proc.pid connection=%fd.name sport=%fd.sport user=%user.name %container.info image=%container.image)
-      priority: NOTICE
-
     # Restricting spawned processes to selected set
 
     - list: traefik_allowed_processes

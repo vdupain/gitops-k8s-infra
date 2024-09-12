@@ -5,6 +5,15 @@ metadata:
   namespace: falco
 data:
   values.yaml: |-
+    mounts:
+      volumeMounts:
+        - mountPath: /etc/falco/rules.d
+          name: rules-volume
+      volumes:
+        - name: rules-volume
+          configMap:
+            name: falco-rules
+
     driver:
       kind: modern_ebpf
     tty: true

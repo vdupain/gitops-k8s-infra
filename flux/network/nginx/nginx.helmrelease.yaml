@@ -3,6 +3,8 @@ kind: HelmRelease
 metadata:
   name: nginx
   namespace: nginx
+  annotations:
+    kustomize.toolkit.fluxcd.io/reconcile: disabled
 spec:
   chart:
     spec:

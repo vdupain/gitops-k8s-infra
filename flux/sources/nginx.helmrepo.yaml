@@ -3,8 +3,6 @@ kind: HelmRepository
 metadata:
   name: nginx
   namespace: flux-system
-  annotations:
-    kustomize.toolkit.fluxcd.io/reconcile: disabled
 spec:
   interval: 15m
   url: https://kubernetes.github.io/ingress-nginx

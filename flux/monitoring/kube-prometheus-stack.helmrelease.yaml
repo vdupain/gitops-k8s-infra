@@ -22,18 +22,12 @@ spec:
     prometheus:
       ingress:
         enabled: true
-        annotations:
-          external-dns.alpha.kubernetes.io/hostname: prometheus.k8s
-          kubernetes.io/ingress.class: nginx
         hosts:
           - prometheus.k8s
         path: /
     grafana:
       enabled: true
       ingress:
-        annotations:
-          external-dns.alpha.kubernetes.io/hostname: grafana.k8s
-          kubernetes.io/ingress.class: nginx
         enabled: true
         hosts:
           - grafana.k8s

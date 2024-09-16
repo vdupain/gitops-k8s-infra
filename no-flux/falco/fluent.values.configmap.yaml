@@ -62,3 +62,9 @@ data:
           Port    9765
           URI     /k8s-audit
           Format  json
+
+        [OUTPUT]
+          Name    forward
+          Match   *
+          Host    vector-falco.logging.svc.cluster.local
+          Port    24224

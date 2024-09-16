@@ -6,8 +6,8 @@ metadata:
 spec:
   chart:
     spec:
-      chart: fluentd
-      version: 0.5.2
+      chart: fluent-bit
+      version: 0.47.9
       sourceRef:
         kind: HelmRepository
         name: fluent

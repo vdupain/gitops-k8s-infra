@@ -34,28 +34,28 @@ spec:
             - fluent_falco
           encoding:
             codec : "json"
-        opensearch:
-          inputs:
-            - fluent_falco
-          type: elasticsearch
-          healthcheck: true
-          api_version: v7
-          endpoints:
-            - "https://opensearch-cluster-master.logging:9200"
-          tls:
-            verify_certificate: false
-            verify_hostname: false
-          mode: data_stream
-          # index pattern: type-dataset-namespace
-          data_stream:
-            type: "auditlogs"
-            namespace: 'falco'
-            dataset: "k8s"
-          auth:
-            strategy: basic
-            user: "admin"
-            password: "myStrongPassword123@456"
-          request:
-            concurrency: adaptive
+        # opensearch:
+        #   inputs:
+        #     - fluent_falco
+        #   type: elasticsearch
+        #   healthcheck: true
+        #   api_version: v7
+        #   endpoints:
+        #     - "https://opensearch-cluster-master.logging:9200"
+        #   tls:
+        #     verify_certificate: false
+        #     verify_hostname: false
+        #   mode: data_stream
+        #   # index pattern: type-dataset-namespace
+        #   data_stream:
+        #     type: "auditlogs"
+        #     namespace: 'falco'
+        #     dataset: "k8s"
+        #   auth:
+        #     strategy: basic
+        #     user: "admin"
+        #     password: "myStrongPassword123@456"
+        #   request:
+        #     concurrency: adaptive
 
 

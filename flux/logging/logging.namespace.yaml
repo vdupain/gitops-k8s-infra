@@ -5,3 +5,4 @@ metadata:
   labels:
     # https://www.talos.dev/v1.7/kubernetes-guides/configuration/pod-security/
     pod-security.kubernetes.io/enforce: privileged
+    vector.dev/exclude: "true"

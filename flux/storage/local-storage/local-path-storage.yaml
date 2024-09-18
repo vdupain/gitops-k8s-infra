@@ -4,6 +4,7 @@ metadata:
   name: local-path-storage
   labels:
     pod-security.kubernetes.io/enforce: privileged  
+    vector.dev/exclude: "true"
 ---
 apiVersion: v1
 kind: ServiceAccount

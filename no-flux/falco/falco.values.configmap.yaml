@@ -48,6 +48,12 @@ data:
           mutualtls: false
           checkcert: false
           minimumpriority: ""
+        syslog:
+          host: "vector-syslog.logging"
+          port: "15514"
+          protocol: "tcp"
+          format: "json"
+
 
     falcoctl:
       artifact:

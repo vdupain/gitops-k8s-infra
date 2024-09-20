@@ -19,9 +19,7 @@ spec:
   values:
     service:
       ipFamilyPolicy: PreferDualStack
-      ipFamilies:
-      - IPv6
-      - IPv4
+      ipFamilies: ["IPv6","IPv4"]
 
     ingress:
       enabled: true

@@ -25,9 +25,7 @@ spec:
 
     service:
       ipFamilyPolicy: PreferDualStack
-      ipFamilies:
-      - IPv6
-      - IPv4
+      ipFamilies: ["IPv6","IPv4"]
       
     config:
       opensearch.yml: |

@@ -20,6 +20,11 @@ spec:
     alertmanager:
       enabled: false
     prometheus:
+      service:
+        ipFamilyPolicy: PreferDualStack
+        ipFamilies:
+        - IPv6
+        - IPv4       
       ingress:
         enabled: true
         hosts:
@@ -27,6 +32,11 @@ spec:
         path: /
     grafana:
       enabled: true
+      service:
+        ipFamilyPolicy: PreferDualStack
+        ipFamilies:
+        - IPv6
+        - IPv4       
       ingress:
         enabled: true
         hosts:

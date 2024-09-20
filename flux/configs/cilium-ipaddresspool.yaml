@@ -6,3 +6,5 @@ spec:
   blocks:
     - start: "192.168.10.160"
       stop: "192.168.10.170"
+    - start: "2a01:cb0c:81d1:a8fb::1160"
+      stop: "2a01:cb0c:81d1:a8fb::1170"

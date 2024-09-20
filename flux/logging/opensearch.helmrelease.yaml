@@ -23,6 +23,12 @@ spec:
       - name: OPENSEARCH_INITIAL_ADMIN_PASSWORD
         value: myStrongPassword123@456
 
+    service:
+      ipFamilyPolicy: PreferDualStack
+      ipFamilies:
+      - IPv6
+      - IPv4
+      
     config:
       opensearch.yml: |
         cluster.name: opensearch-cluster

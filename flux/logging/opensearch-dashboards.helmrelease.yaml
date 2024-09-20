@@ -17,6 +17,12 @@ spec:
   releaseName: opensearch-dashboards
 
   values:
+    service:
+      ipFamilyPolicy: PreferDualStack
+      ipFamilies:
+      - IPv6
+      - IPv4
+
     ingress:
       enabled: true
       ingressClassName: traefik

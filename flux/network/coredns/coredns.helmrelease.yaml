@@ -24,7 +24,7 @@ spec:
     serviceType: "LoadBalancer"
     service:
       annotations:
-        io.cilium/lb-ipam-ips: 192.168.10.160,2a01:cb0c:81d1:a8fb::1160
+        io.cilium/lb-ipam-ips: 192.168.10.160
 
     # Default zone is what Kubernetes recommends:
     # https://kubernetes.io/docs/tasks/administer-cluster/dns-custom-nameservers/#coredns-configmap-options

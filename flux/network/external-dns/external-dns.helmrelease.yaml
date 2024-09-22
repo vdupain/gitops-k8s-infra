@@ -30,7 +30,7 @@ spec:
 
     registry: "txt"
     txtPrefix: "external-dns-"
-    txtOwnerId: "k8s"
+    #txtOwnerId: "k8s"
     domainFilters:
       - "k8s"
     provider: coredns

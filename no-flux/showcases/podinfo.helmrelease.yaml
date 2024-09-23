@@ -19,6 +19,7 @@ spec:
   values:
     ingress:
       enabled: true
+      className: traefik
       annotations:
         external-dns.alpha.kubernetes.io/hostname: podinfo.k8s
       hosts:

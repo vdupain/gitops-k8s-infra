@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+  name: podinfo-dualstack
+  namespace: showcases
+  annotations:
+    metallb.universe.tf/loadBalancerIPs: 2a01:cb0c:81d1:a8fb::1163,192.168.10.163
+spec:
+  ipFamilyPolicy: PreferDualStack
+  ipFamilies: ["IPv6","IPv4"]
+  type: LoadBalancer
+  ports:
+  - name: http
+    port: 9898
+    protocol: TCP
+    targetPort: http
+  - name: grpc
+    port: 9999
+    protocol: TCP
+    targetPort: grpc
+  selector:
+    app.kubernetes.io/name: podinfo

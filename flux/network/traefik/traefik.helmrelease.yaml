@@ -28,8 +28,7 @@ spec:
       enabled: true
       ipFamilyPolicy: PreferDualStack
       ipFamilies: ["IPv6","IPv4"]
-      #type: LoadBalancer
-      type: NodePort
-      #annotations:
-      #  io.cilium/lb-ipam-ips: 192.168.10.162,2a01:cb0c:81d1:a8fb::1162
+      type: LoadBalancer
+      annotations:
+        metallb.universe.tf/loadBalancerIPs: 2a01:cb0c:81d1:a8fb::1161,192.168.10.161
 

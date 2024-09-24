@@ -1,0 +1,24 @@
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: openebs-pvc
+spec:
+  storageClassName: openebs-hostpath
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 4Gi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: openebs-pvc-local-sdb
+spec:
+  storageClassName: openebs-hostpath-local-sdb
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 4Gi

@@ -13,7 +13,7 @@ spec:
           - name: DBENCH_MOUNTPOINT
             value: /data
           - name: DBENCH_TYPE
-            value: quick
+            value: detailed
           - name: FIO_SIZE
             value: 2G
           - name: FIO_DIRECT

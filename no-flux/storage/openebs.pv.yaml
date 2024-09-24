@@ -22,3 +22,15 @@ spec:
   resources:
     requests:
       storage: 4Gi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: openebs-pvc-local-sdc
+spec:
+  storageClassName: openebs-hostpath-local-sdc
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 4Gi

@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: dbench-local-path-storage-pvc
+  name: dbench-openebs-pvc-local-sdc
 spec:
   template:
     spec:
@@ -35,6 +35,5 @@ spec:
       volumes:
       - name: dbench-pv
         persistentVolumeClaim:
-          #claimName: openebs-pvc-local-sdb
-          claimName: local-path-storage-pvc
+          claimName: openebs-pvc-local-sdc
   backoffLimit: 4

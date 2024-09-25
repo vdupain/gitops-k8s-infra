@@ -1,0 +1,39 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: dbench-openebs-ssd1
+spec:
+  template:
+    spec:
+      containers:
+      - name: dbench
+        image: openebs/perf-test:latest
+        imagePullPolicy: IfNotPresent
+        env:
+          - name: DBENCH_MOUNTPOINT
+            value: /data
+          - name: DBENCH_TYPE
+            value: detailed
+          - name: FIO_SIZE
+            value: 2G
+          - name: FIO_DIRECT
+            value: '1'
+          - name: FIO_NUMJOBS
+            value: '1'
+          - name: FIO_OFFSET_INCREMENT
+            value: 250M
+          - name: FIO_IOENGINE
+            value: libaio
+          - name: OPTIONS
+            value: ''
+          - name: CUSTOM
+            value: ''
+        volumeMounts:
+        - name: dbench-pv
+          mountPath: /data
+      restartPolicy: Never
+      volumes:
+      - name: dbench-pv
+        persistentVolumeClaim:
+          claimName: openebs-pvc-local-ssd1
+  backoffLimit: 4

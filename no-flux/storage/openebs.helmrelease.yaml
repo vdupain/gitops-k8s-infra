@@ -20,7 +20,7 @@ spec:
     engines:
       replicated:
         mayastor:
-          enabled: false
+          enabled: true
       local:
         lvm:
           enabled: false
@@ -31,4 +31,3 @@ spec:
         node:
           initContainers:
             enabled: false
-

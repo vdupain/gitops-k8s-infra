@@ -1,0 +1,41 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: fio
+spec:
+  nodeSelector:
+    openebs.io/engine: mayastor
+  volumes:
+    - name: sda
+      persistentVolumeClaim:
+        claimName: openebs-hostpath
+    - name: ssd1
+      persistentVolumeClaim:
+        claimName: openebs-hostpath-ssd1
+    - name: ceph
+      persistentVolumeClaim:
+        claimName: openebs-hostpath-ceph
+    - name: replicated-1
+      persistentVolumeClaim:
+        claimName: openebs-pvc-mayastor-1
+    - name: replicated-3
+      persistentVolumeClaim:
+        claimName: openebs-pvc-mayastor-3
+
+  containers:
+    - name: fio
+      image: nixery.dev/shell/fio
+      args:
+        - sleep
+        - "1000000"
+      volumeMounts:
+        - mountPath: "/volume/sda"
+          name: sda
+        - mountPath: "/volume/ssd1"
+          name: ssd1
+        - mountPath: "/volume/ceph"
+          name: ceph
+        - mountPath: "/volume/rep-1"
+          name: replicated-1
+        - mountPath: "/volume/rep-3"
+          name: replicated-3

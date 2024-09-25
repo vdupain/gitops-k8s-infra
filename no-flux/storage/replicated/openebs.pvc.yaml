@@ -1,0 +1,24 @@
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: openebs-mayastor-1
+spec:
+  storageClassName: openebs-single-replica
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Gi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: openebs-mayastor-3
+spec:
+  storageClassName: mayastor-3
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 400Gi

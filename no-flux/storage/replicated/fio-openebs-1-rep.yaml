@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: dbench-openebs-pvc-local-sdb
+  name: dbench-openebs-1-rep
 spec:
   template:
     spec:
@@ -35,5 +35,5 @@ spec:
       volumes:
       - name: dbench-pv
         persistentVolumeClaim:
-          claimName: openebs-pvc-local-sdb
+          claimName: openebs-pvc-mayastor-1
   backoffLimit: 4

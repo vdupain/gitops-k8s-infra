@@ -1,0 +1,27 @@
+---
+apiVersion: "openebs.io/v1beta2"
+kind: DiskPool
+metadata:
+  name: pool-on-cp-0
+  namespace: openebs
+spec:
+  node: cp-0
+  disks: ["/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2"]
+---
+apiVersion: "openebs.io/v1beta2"
+kind: DiskPool
+metadata:
+  name: pool-on-worker-0
+  namespace: openebs
+spec:
+  node: worker-0
+  disks: ["/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2"]
+---
+apiVersion: "openebs.io/v1beta2"
+kind: DiskPool
+metadata:
+  name: pool-on-worker-1
+  namespace: openebs
+spec:
+  node: worker-1
+  disks: ["/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2"]

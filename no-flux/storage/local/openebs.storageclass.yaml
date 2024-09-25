@@ -2,14 +2,14 @@
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: openebs-hostpath-local-sdb
+  name: openebs-hostpath-ssd1
   annotations:
     openebs.io/cas-type: local
     cas.openebs.io/config: |
       - name: StorageType
         value: hostpath
       - name: BasePath
-        value: /var/storage/local-sdb
+        value: /var/storage/ssd1
 provisioner: openebs.io/local
 reclaimPolicy: Delete
 volumeBindingMode: WaitForFirstConsumer
@@ -17,14 +17,14 @@ volumeBindingMode: WaitForFirstConsumer
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: openebs-hostpath-local-sdc
+  name: openebs-hostpath-ceph
   annotations:
     openebs.io/cas-type: local
     cas.openebs.io/config: |
       - name: StorageType
         value: hostpath
       - name: BasePath
-        value: /var/storage/local-sdc
+        value: /var/storage/ceph
 provisioner: openebs.io/local
 reclaimPolicy: Delete
 volumeBindingMode: WaitForFirstConsumer

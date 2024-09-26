@@ -1,0 +1,60 @@
+# ---
+# kind: PersistentVolumeClaim
+# apiVersion: v1
+# metadata:
+#   name: openebs-hostpath
+# spec:
+#   storageClassName: openebs-hostpath
+#   accessModes:
+#     - ReadWriteOnce
+#   resources:
+#     requests:
+#       storage: 10Gi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: openebs-hostpath-local-thin
+spec:
+  storageClassName: openebs-hostpath-local-thin
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: openebs-hostpath-ssd1
+spec:
+  storageClassName: openebs-hostpath-ssd1
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: openebs-hostpath-ssd2
+spec:
+  storageClassName: openebs-hostpath-ssd2
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: openebs-hostpath-ceph
+spec:
+  storageClassName: openebs-hostpath-ceph
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi

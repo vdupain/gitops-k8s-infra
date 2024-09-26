@@ -1,0 +1,48 @@
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: openebs-1-replica-slow
+spec:
+  storageClassName: openebs-1-replica-slow
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: openebs-1-replica-fast
+spec:
+  storageClassName: openebs-1-replica-fast
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: openebs-3-replica-slow
+spec:
+  storageClassName: openebs-3-replica-slow
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: openebs-3-replica-fast
+spec:
+  storageClassName: openebs-3-replica-fast
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi

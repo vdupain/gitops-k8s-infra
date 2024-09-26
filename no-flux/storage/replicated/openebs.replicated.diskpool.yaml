@@ -1,0 +1,144 @@
+---
+apiVersion: "openebs.io/v1beta2"
+kind: DiskPool
+metadata:
+  name: pool-scsi5-cp-0-fast
+  namespace: openebs
+spec:
+  node: cp-0
+  disks: ["/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi5"]
+  topology:
+    labelled:
+      disk: fast
+---
+apiVersion: "openebs.io/v1beta2"
+kind: DiskPool
+metadata:
+  name: pool-scsi6-cp-0-fast
+  namespace: openebs
+spec:
+  node: cp-0
+  disks: ["/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi6"]
+  topology:
+    labelled:
+      disk: fast
+---
+apiVersion: "openebs.io/v1beta2"
+kind: DiskPool
+metadata:
+  name: pool-scsi5-worker-0-fast
+  namespace: openebs
+spec:
+  node: worker-0
+  disks: ["/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi5"]
+  topology:
+    labelled:
+      disk: fast
+---
+apiVersion: "openebs.io/v1beta2"
+kind: DiskPool
+metadata:
+  name: pool-scsi6-worker-0-fast
+  namespace: openebs
+spec:
+  node: worker-0
+  disks: ["/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi6"]
+  topology:
+    labelled:
+      disk: fast
+---
+apiVersion: "openebs.io/v1beta2"
+kind: DiskPool
+metadata:
+  name: pool-scsi5-worker-1-fast
+  namespace: openebs
+spec:
+  node: worker-1
+  disks: ["/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi5"]
+  topology:
+    labelled:
+      disk: fast
+---
+apiVersion: "openebs.io/v1beta2"
+kind: DiskPool
+metadata:
+  name: pool-scsi6-worker-1-fast
+  namespace: openebs
+spec:
+  node: worker-1
+  disks: ["/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi6"]
+  topology:
+    labelled:
+      disk: fast
+---
+apiVersion: "openebs.io/v1beta2"
+kind: DiskPool
+metadata:
+  name: pool-scsi2-cp-0-slow
+  namespace: openebs
+spec:
+  node: cp-0
+  disks: ["/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2"]
+  topology:
+    labelled:
+      disk: slow
+---
+apiVersion: "openebs.io/v1beta2"
+kind: DiskPool
+metadata:
+  name: pool-scsi3-cp-0-slow
+  namespace: openebs
+spec:
+  node: cp-0
+  disks: ["/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi3"]
+  topology:
+    labelled:
+      disk: slow
+---
+apiVersion: "openebs.io/v1beta2"
+kind: DiskPool
+metadata:
+  name: pool-scsi2-worker-0-slow
+  namespace: openebs
+spec:
+  node: worker-0
+  disks: ["/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2"]
+  topology:
+    labelled:
+      disk: slow
+---
+apiVersion: "openebs.io/v1beta2"
+kind: DiskPool
+metadata:
+  name: pool-scsi3-worker-0-slow
+  namespace: openebs
+spec:
+  node: worker-0
+  disks: ["/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi3"]
+  topology:
+    labelled:
+      disk: slow
+---
+apiVersion: "openebs.io/v1beta2"
+kind: DiskPool
+metadata:
+  name: pool-scsi2-worker-1-slow
+  namespace: openebs
+spec:
+  node: worker-1
+  disks: ["/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2"]
+  topology:
+    labelled:
+      disk: slow
+---
+apiVersion: "openebs.io/v1beta2"
+kind: DiskPool
+metadata:
+  name: pool-scsi3-worker-1-slow
+  namespace: openebs
+spec:
+  node: worker-1
+  disks: ["/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi3"]
+  topology:
+    labelled:
+      disk: slow

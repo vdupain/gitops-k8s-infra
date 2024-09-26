@@ -35,5 +35,5 @@ spec:
       volumes:
       - name: dbench-pv
         persistentVolumeClaim:
-          claimName: openebs-pvc-mayastor-1
+          claimName: openebs-1-replica-ext4
   backoffLimit: 4

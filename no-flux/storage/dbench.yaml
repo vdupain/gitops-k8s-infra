@@ -16,7 +16,7 @@ spec:
       - name: DBENCH_TYPE
         value: detailed
       - name: FIO_SIZE
-        value: 2G
+        value: 1G
       - name: FIO_DIRECT
         value: '1'
       - name: FIO_NUMJOBS
@@ -30,30 +30,45 @@ spec:
       - name: CUSTOM
         value: ''
     volumeMounts:
-      - mountPath: "/volume/sda"
-        name: sda
+      - mountPath: "/volume/local-thin"
+        name: local-thin
       - mountPath: "/volume/ssd1"
         name: ssd1
+      - mountPath: "/volume/ssd2"
+        name: ssd2
       - mountPath: "/volume/ceph"
         name: ceph
-      - mountPath: "/volume/rep-1"
-        name: replicated-1
-      - mountPath: "/volume/rep-3"
-        name: replicated-3
+      - mountPath: "/volume/rep-1-slow"
+        name: rep-1-slow
+      - mountPath: "/volume/rep-1-fast"
+        name: rep-1-fast
+      - mountPath: "/volume/rep-3-slow"
+        name: rep-3-slow
+      - mountPath: "/volume/rep-3-fast"
+        name: rep-3-fast
   restartPolicy: Never
   volumes:
-    - name: sda
+    - name: local-thin
       persistentVolumeClaim:
-        claimName: openebs-hostpath
+        claimName: openebs-hostpath-local-thin
     - name: ssd1
       persistentVolumeClaim:
         claimName: openebs-hostpath-ssd1
+    - name: ssd2
+      persistentVolumeClaim:
+        claimName: openebs-hostpath-ssd2
     - name: ceph
       persistentVolumeClaim:
         claimName: openebs-hostpath-ceph
-    - name: replicated-1
+    - name: rep-1-slow
       persistentVolumeClaim:
-        claimName: openebs-mayastor-1
-    - name: replicated-3
+        claimName: openebs-1-replica-slow
+    - name: rep-1-fast
       persistentVolumeClaim:
-        claimName: openebs-mayastor-3
+        claimName: openebs-1-replica-fast
+    - name: rep-3-slow
+      persistentVolumeClaim:
+        claimName: openebs-3-replica-slow
+    - name: rep-3-fast
+      persistentVolumeClaim:
+        claimName: openebs-3-replica-fast

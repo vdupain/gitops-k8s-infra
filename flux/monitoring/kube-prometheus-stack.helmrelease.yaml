@@ -20,6 +20,8 @@ spec:
     alertmanager:
       enabled: false
     prometheus:
+      prometheusSpec:
+        serviceMonitorSelectorNilUsesHelmValues: false
       ingress:
         enabled: true
         hosts:

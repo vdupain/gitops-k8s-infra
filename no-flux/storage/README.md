@@ -42,9 +42,9 @@ kubectl exec -it dbench -- sh -c 'DBENCH_MOUNTPOINT=/volume/local-thin /docker-e
 kubectl exec -it dbench -- sh -c 'DBENCH_MOUNTPOINT=/volume/ssd1 /docker-entrypoint.sh'
 kubectl exec -it dbench -- sh -c 'DBENCH_MOUNTPOINT=/volume/ssd2 /docker-entrypoint.sh'
 
-kubectl exec -it dbench -- sh -c 'DBENCH_MOUNTPOINT=/volume/rep-1-ext4 /docker-entrypoint.sh'
-kubectl exec -it dbench -- sh -c 'DBENCH_MOUNTPOINT=/volume/rep-1-xfs /docker-entrypoint.sh'
+kubectl exec -it dbench -- sh -c 'DBENCH_MOUNTPOINT=/volume/rep-1-slow /docker-entrypoint.sh'
+kubectl exec -it dbench -- sh -c 'DBENCH_MOUNTPOINT=/volume/rep-1-fast/docker-entrypoint.sh'
 
-kubectl exec -it dbench -- sh -c 'DBENCH_MOUNTPOINT=/volume/rep-3-ext4 /docker-entrypoint.sh'
-kubectl exec -it dbench -- sh -c 'DBENCH_MOUNTPOINT=/volume/rep-3-xfs /docker-entrypoint.sh'
+kubectl exec -it dbench -- sh -c 'DBENCH_MOUNTPOINT=/volume/rep-3-slow /docker-entrypoint.sh'
+kubectl exec -it dbench -- sh -c 'DBENCH_MOUNTPOINT=/volume/rep-3-fast /docker-entrypoint.sh'
 ```

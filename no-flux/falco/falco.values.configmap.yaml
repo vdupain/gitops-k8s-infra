@@ -32,7 +32,7 @@ data:
           targetPort: 2802
           nodePort: 30128
       config:
-        debug: true
+        # debug: true
         # elasticsearch:
         #   hostport: "https://opensearch-cluster-master.logging:9200"
         #   index: "logs-falco"

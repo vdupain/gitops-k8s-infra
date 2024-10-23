@@ -63,8 +63,8 @@ data:
           URI     /k8s-audit
           Format  json
 
-        [OUTPUT]
-          Name    forward
-          Match   *
-          Host    vector-fluent-falco.falco.svc.cluster.local
-          Port    24224
+        # [OUTPUT]
+        #   Name    forward
+        #   Match   *
+        #   Host    vector-fluent-falco.falco.svc.cluster.local
+        #   Port    24224

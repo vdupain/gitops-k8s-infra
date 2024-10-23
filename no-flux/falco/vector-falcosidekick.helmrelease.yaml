@@ -29,16 +29,29 @@ spec:
           address : 0.0.0.0:15514
           mode : tcp
           path: /vector/syslog/socket
+      transforms:
+        json_parse:
+          type: "remap"
+          inputs:
+            - syslog
+          source: |
+            structured, err = parse_json(.message)
+            if err != null {
+              log("Unable to parse message", level: "warn", rate_limit_secs: 3600)
+            } else {
+              . = merge!(., structured)
+              del(.message)
+            }
       sinks:
         console:
           type: "console"
           inputs:
-            - syslog
+            - json_parse
           encoding:
             codec : "json"
         opensearch:
           inputs:
-            - syslog
+            - json_parse
           type: elasticsearch
           healthcheck: true
           api_version: v7
@@ -52,7 +65,7 @@ spec:
           data_stream:
             type: "logs"
             namespace: 'falco'
-            #dataset: "syscall"
+            dataset: ""
           auth:
             strategy: basic
             user: "admin"

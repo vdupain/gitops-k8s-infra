@@ -33,21 +33,21 @@ data:
           nodePort: 30128
       config:
         debug: true
-        elasticsearch:
-          hostport: "https://opensearch-cluster-master.logging:9200"
-          index: "logs-falco"
-          type: "_doc"
-          suffix: "none"
-          username: "admin"
-          password: "myStrongPassword123@456"
-          flattenfields: false
-          createindextemplate: false
-          numberofshards: 3
-          numberofreplicas: 3
-          customheaders: ""
-          mutualtls: false
-          checkcert: false
-          minimumpriority: ""
+        # elasticsearch:
+        #   hostport: "https://opensearch-cluster-master.logging:9200"
+        #   index: "logs-falco"
+        #   type: "_doc"
+        #   suffix: "none"
+        #   username: "admin"
+        #   password: "myStrongPassword123@456"
+        #   flattenfields: false
+        #   createindextemplate: false
+        #   numberofshards: 3
+        #   numberofreplicas: 3
+        #   customheaders: ""
+        #   mutualtls: false
+        #   checkcert: false
+        # #   minimumpriority: ""
         syslog:
           host: "vector-falcosidekick.falco"
           port: "15514"

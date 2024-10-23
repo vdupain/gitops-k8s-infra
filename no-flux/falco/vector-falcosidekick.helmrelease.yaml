@@ -1,8 +1,8 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: vector-falco
-  namespace: logging
+  name: vector-falcosidekick
+  namespace: falco
 spec:
   chart:
     spec:
@@ -14,7 +14,7 @@ spec:
       version: 0.36.1
   interval: 15m
   timeout: 5m
-  releaseName: vector-falco
+  releaseName: vector-falcosidekick
 
   values:
     role: Aggregator
@@ -24,19 +24,21 @@ spec:
       api:
         enabled: false
       sources:
-        fluent_falco:
-          type: fluent
-          address : "0.0.0.0:24224"
+        syslog:
+          type: syslog
+          address : 0.0.0.0:15514
+          mode : tcp
+          path: /vector/syslog/socket
       sinks:
         console:
           type: "console"
           inputs:
-            - fluent_falco
+            - syslog
           encoding:
             codec : "json"
         opensearch:
           inputs:
-            - fluent_falco
+            - syslog
           type: elasticsearch
           healthcheck: true
           api_version: v7
@@ -48,14 +50,12 @@ spec:
           mode: data_stream
           # index pattern: type-dataset-namespace
           data_stream:
-            type: "auditlogs"
+            type: "logs"
             namespace: 'falco'
-            dataset: "k8s"
+            #dataset: "syscall"
           auth:
             strategy: basic
             user: "admin"
             password: "myStrongPassword123@456"
           request:
             concurrency: adaptive
-
-

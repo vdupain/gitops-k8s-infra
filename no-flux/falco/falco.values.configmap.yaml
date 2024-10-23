@@ -49,7 +49,7 @@ data:
           checkcert: false
           minimumpriority: ""
         syslog:
-          host: "vector-syslog.logging"
+          host: "vector-falcosidekick.falco"
           port: "15514"
           protocol: "tcp"
           format: "json"

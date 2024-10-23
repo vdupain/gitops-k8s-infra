@@ -66,5 +66,5 @@ data:
         [OUTPUT]
           Name    forward
           Match   *
-          Host    vector-falco.logging.svc.cluster.local
+          Host    vector-fluent-falco.falco.svc.cluster.local
           Port    24224
